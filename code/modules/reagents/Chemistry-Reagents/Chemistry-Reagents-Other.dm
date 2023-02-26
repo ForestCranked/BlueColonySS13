@@ -262,7 +262,7 @@
 		src << "<span class='warning'>Your hair falls out.</span>"
 		H.h_style = "Bald"
 		H.f_style = "Shaved"
-		H.update_hair()
+		H.update_hair(TRUE)
 
 /datum/reagent/platinum
 	name = "Platinum"
