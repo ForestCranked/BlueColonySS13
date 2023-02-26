@@ -260,9 +260,9 @@
 	var/mob/living/carbon/human/H = M
 	if(istype(H) && (H.species.flags & NO_SCAN))
 		src << "<span class='warning'>Your hair falls out.</span>"
-		H.change_hair("Bald")
-		H.change_facial_hair("Shaved")
-		H.update_hair(1)
+		H.h_style = "Bald"
+		H.f_style = "Shaved"
+		H.update_hair()
 
 /datum/reagent/platinum
 	name = "Platinum"
