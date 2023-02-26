@@ -205,6 +205,16 @@
 	icon_state = "deodorant"
 	item_state = "deodorant"
 
+/obj/item/weapon/reagent_containers/spray/cleaner/deodorant/baldium
+	name = "deodarant"
+	desc = "A can of Gold Standard spray deodarant - for when you're too lazy to shower."
+	volume = 40
+
+/obj/item/weapon/reagent_containers/spray/cleaner/deodorant/baldium/New()
+	..()
+	reagents.add_reagent("baldium", 20)
+	reagents.add_reagent("cleaner", 20)
+
 /obj/item/weapon/reagent_containers/spray/baldium
 	name = "baldium spray"
 	desc = "OH GOD IT'S IN A SPRAY BOTTLE."
