@@ -231,6 +231,39 @@
 	color = COLOR_URANIUM
 	price_tag = 3.2
 
+/datum/reagent/lye
+	name = "Lye"
+	id = "lye"
+	description = "An alkali metal hydroxide whatever that is the precursor to true suffering."
+	taste_description = "mischief"
+	reagent_state = SOLID
+	color = "#FFFFD6"
+
+/datum/reagent/baldium
+	name = "Baldium"
+	id = "baldium"
+	description = "Pure liquid suffering. I'm sorry in advance, Micheal."
+	taste_description = "Micheal's worst nightmares"
+	reagent_state = LIQUID
+	color = "#ECB2CF"
+
+/datum/reagent/baldium/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
+	affect_blood(M, alien, removed)
+
+/datum/reagent/baldium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(M.isSynthetic())
+		return
+
+	if(!ishuman(M))
+		return
+
+	var/mob/living/carbon/human/H = M
+	if(istype(H) && (H.species.flags & NO_SCAN))
+		src << "<span class='warning'>Your hair falls out.</span>"
+		H.change_hair("Bald")
+		H.change_facial_hair("Shaved")
+		H.update_hair(1)
+
 /datum/reagent/platinum
 	name = "Platinum"
 	id = "platinum"
