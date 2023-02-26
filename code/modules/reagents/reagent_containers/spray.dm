@@ -205,3 +205,10 @@
 	icon_state = "deodorant"
 	item_state = "deodorant"
 
+/obj/item/weapon/reagent_containers/spray/baldium
+	name = "baldium spray"
+	desc = "OH GOD IT'S IN A SPRAY BOTTLE."
+
+/obj/item/weapon/reagent_containers/spray/baldium/New()
+	..()
+	reagents.add_reagent("baldium", 250)
